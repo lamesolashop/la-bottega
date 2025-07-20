@@ -1,127 +1,186 @@
-/* Stili Generali */
-body {
-    margin: 0;
-    font-family: 'Roboto', sans-serif;
-    color: #333;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start; /* Allinea all'inizio per lo scroll */
-    min-height: 100vh;
-    padding: 40px 20px;
-    box-sizing: border-box;
+:root {
+  --primary-color: #f0f0f0; /* Testo quasi bianco per leggibilità */
+  --accent-color: #BDB76B;  /* Un ocra/oro scuro, elegante e rustico */
+  --bg-overlay: rgba(20, 20, 20, 0.6); /* Nero con trasparenza */
+  --card-bg: rgba(255, 255, 255, 0.1); /* Vetro satinato */
+  --card-border: rgba(255, 255, 255, 0.2);
 }
 
-/* Sfondo Video */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  color: var(--primary-color);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  padding: 40px 20px;
+}
+
+/* --- Sfondo Video --- */
 .video-background {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    overflow: hidden;
-    z-index: -2;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  z-index: -2;
 }
 
 #bg-video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Copre l'intero schermo senza distorcere */
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
-/* Overlay scuro per leggibilità */
 .video-background::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Scurisce leggermente il video */
-    z-index: -1;
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--bg-overlay);
+  z-index: -1;
 }
 
-/* Contenuto Principale */
-.content {
-    max-width: 680px;
-    width: 100%;
-    text-align: center;
+/* --- Contenitore Principale --- */
+.container {
+  max-width: 680px;
+  width: 100%;
+  text-align: center;
 }
 
 header {
-    margin-bottom: 40px;
+  margin-bottom: 40px;
 }
 
 .logo {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    border: 3px solid rgba(255, 255, 255, 0.8);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
-    margin-bottom: 20px;
+  width: 140px;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid var(--accent-color);
+  margin-bottom: 20px;
+  box-shadow: 0 0 25px rgba(189, 183, 107, 0.4);
 }
 
 h1 {
-    font-family: 'Playfair Display', serif;
-    font-size: 2.5rem;
-    color: #ffffff;
-    margin: 0;
-    text-shadow: 1px 1px 5px rgba(0,0,0,0.5);
+  font-family: 'Playfair Display', serif;
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0;
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
 }
 
 .subtitle {
-    font-size: 1.1rem;
-    color: #e0e0e0;
-    margin-top: 10px;
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+  font-size: 1.1rem;
+  color: var(--primary-color);
+  margin-top: 15px;
+  line-height: 1.6;
+  text-shadow: 1px 1px 5px rgba(0,0,0,0.7);
+  max-width: 450px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-/* Contenitore delle Schede */
+/* --- Schede Link --- */
 .links-container {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
-/* Stile delle Schede-Link */
 .link-card {
-    display: block;
-    background-color: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 15px;
-    padding: 20px 25px;
-    text-decoration: none;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background: var(--card-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--card-border);
+  border-radius: 15px;
+  padding: 20px;
+  text-decoration: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
+  text-align: left;
 }
 
 .link-card:hover {
-    transform: translateY(-5px) scale(1.02);
-    box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.3);
+  transform: translateY(-5px) scale(1.03);
+  box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.3);
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.card-icon {
+  font-size: 1.8rem;
+  color: var(--accent-color);
+  width: 30px; /* Larghezza fissa per allineamento */
+}
+
+.card-content {
+  flex-grow: 1; /* Occupa tutto lo spazio rimanente */
 }
 
 .card-content h3 {
-    margin: 0 0 5px 0;
-    font-family: 'Roboto', sans-serif;
-    font-weight: 500;
-    font-size: 1.2rem;
-    color: #ffffff;
+  margin: 0 0 5px 0;
+  font-weight: 500;
+  font-size: 1.1rem;
+  color: #ffffff;
 }
 
 .card-content p {
-    margin: 0;
-    font-size: 0.95rem;
-    color: #d1d1d1;
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--primary-color);
+  opacity: 0.8;
 }
 
-/* Stili per dispositivi mobili */
+.arrow-icon {
+  font-size: 1rem;
+  color: var(--primary-color);
+  opacity: 0.6;
+  transition: transform 0.3s ease;
+}
+
+.link-card:hover .arrow-icon {
+  transform: translateX(5px);
+  opacity: 1;
+}
+
+/* --- Footer Social --- */
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 50px;
+}
+
+.social-icons a {
+  color: var(--primary-color);
+  font-size: 1.5rem;
+  transition: all 0.3s ease;
+  opacity: 0.8;
+}
+
+.social-icons a:hover {
+  color: var(--accent-color);
+  transform: scale(1.2);
+  opacity: 1;
+}
+
+/* --- Media Queries --- */
 @media (max-width: 768px) {
-    h1 {
-        font-size: 2rem;
-    }
-    .logo {
-        width: 120px;
-        height: 120px;
-    }
+  body { padding: 20px 15px; }
+  .logo { width: 120px; height: 120px; }
+  h1 { font-size: 2.2rem; }
+  .subtitle { font-size: 1rem; }
 }
