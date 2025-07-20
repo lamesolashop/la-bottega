@@ -1,0 +1,127 @@
+/* Stili Generali */
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Allinea all'inizio per lo scroll */
+    min-height: 100vh;
+    padding: 40px 20px;
+    box-sizing: border-box;
+}
+
+/* Sfondo Video */
+.video-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    z-index: -2;
+}
+
+#bg-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Copre l'intero schermo senza distorcere */
+}
+
+/* Overlay scuro per leggibilità */
+.video-background::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Scurisce leggermente il video */
+    z-index: -1;
+}
+
+/* Contenuto Principale */
+.content {
+    max-width: 680px;
+    width: 100%;
+    text-align: center;
+}
+
+header {
+    margin-bottom: 40px;
+}
+
+.logo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 3px solid rgba(255, 255, 255, 0.8);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    color: #ffffff;
+    margin: 0;
+    text-shadow: 1px 1px 5px rgba(0,0,0,0.5);
+}
+
+.subtitle {
+    font-size: 1.1rem;
+    color: #e0e0e0;
+    margin-top: 10px;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+}
+
+/* Contenitore delle Schede */
+.links-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Stile delle Schede-Link */
+.link-card {
+    display: block;
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+    padding: 20px 25px;
+    text-decoration: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
+}
+
+.link-card:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.3);
+}
+
+.card-content h3 {
+    margin: 0 0 5px 0;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    font-size: 1.2rem;
+    color: #ffffff;
+}
+
+.card-content p {
+    margin: 0;
+    font-size: 0.95rem;
+    color: #d1d1d1;
+}
+
+/* Stili per dispositivi mobili */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+    }
+    .logo {
+        width: 120px;
+        height: 120px;
+    }
+}
