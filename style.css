@@ -1,7 +1,7 @@
 :root {
   --primary-color: #f0f0f0; /* Testo quasi bianco per leggibilità */
   --accent-color: #BDB76B;  /* Un ocra/oro scuro, elegante e rustico */
-  --bg-overlay: rgba(20, 20, 20, 0.6); /* Nero con trasparenza */
+  --bg-overlay: rgba(10, 10, 10, 0.75); /* AUMENTATO OPACITÀ per più contrasto */
   --card-bg: rgba(255, 255, 255, 0.1); /* Vetro satinato */
   --card-border: rgba(255, 255, 255, 0.2);
 }
@@ -68,8 +68,8 @@ header {
   border-radius: 50%;
   border: 4px solid var(--accent-color);
   margin-bottom: 20px;
-  /* EFFETTO RETROILLUMINATO */
-  box-shadow: 0 0 25px rgba(189, 183, 107, 0.5); 
+  /* EFFETTO RETROILLUMINATO PIÙ INTENSO */
+  box-shadow: 0 0 35px rgba(189, 183, 107, 0.6); 
 }
 
 h1 {
@@ -78,7 +78,7 @@ h1 {
   font-weight: 700;
   color: #ffffff;
   margin: 0;
-  text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.8);
 }
 
 .subtitle {
@@ -86,7 +86,7 @@ h1 {
   color: var(--primary-color);
   margin-top: 15px;
   line-height: 1.6;
-  text-shadow: 1px 1px 5px rgba(0,0,0,0.7);
+  text-shadow: 1px 1px 5px rgba(0,0,0,0.8);
   max-width: 450px;
   margin-left: auto;
   margin-right: auto;
