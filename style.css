@@ -68,7 +68,8 @@ header {
   border-radius: 50%;
   border: 4px solid var(--accent-color);
   margin-bottom: 20px;
-  box-shadow: 0 0 25px rgba(189, 183, 107, 0.4);
+  /* EFFETTO RETROILLUMINATO */
+  box-shadow: 0 0 25px rgba(189, 183, 107, 0.5); 
 }
 
 h1 {
@@ -124,6 +125,7 @@ h1 {
   font-size: 1.8rem;
   color: var(--accent-color);
   width: 30px; /* Larghezza fissa per allineamento */
+  text-align: center;
 }
 
 .card-content {
