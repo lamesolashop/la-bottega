@@ -1,7 +1,7 @@
 :root {
   --primary-color: #f5f5f5; 
   --accent-color: #BDB76B;  
-  --bg-overlay: rgba(5, 5, 5, 0.9); /* Overlay scuro, per sicurezza */
+  --bg-overlay: rgba(5, 5, 5, 0.95); /* Overlay quasi opaco */
   --card-bg: rgba(255, 255, 255, 0.08); 
   --card-border: rgba(255, 255, 255, 0.2);
 }
@@ -17,7 +17,7 @@ body {
   color: var(--primary-color);
   display: flex;
   justify-content: center;
-  align-items: flex-start; /* Permette lo scroll se il contenuto è lungo */
+  align-items: flex-start;
   min-height: 100vh;
   padding: 40px 20px;
 }
@@ -31,7 +31,7 @@ body {
   height: 100vh;
   overflow: hidden;
   z-index: -2;
-  background-color: #000; /* Colore di fallback se il video non carica */
+  background-color: #050505; /* Fallback nero scurissimo */
 }
 
 video {
@@ -39,7 +39,7 @@ video {
   height: 100%;
   object-fit: cover;
   /* --- MODIFICA CHIAVE: VIDEO ESTREMAMENTE SCURO CON FILTRO --- */
-  filter: brightness(25%); 
+  filter: brightness(20%); 
 }
 
 .video-background::after {
@@ -100,7 +100,7 @@ h1 {
   flex-direction: column;
   gap: 15px; 
   /* --- MODIFICA CHIAVE: CONTENITORE SCHEDE PIÙ CORTO E CENTRATO --- */
-  width: 75%; /* Imposta la larghezza a 3/4 del contenitore */
+  width: 80%; /* Imposta la larghezza a 3/4 (o quasi) del contenitore */
   margin: 0 auto; /* Centra il contenitore delle schede */
 }
 
@@ -126,22 +126,13 @@ h1 {
   background: rgba(255, 255, 255, 0.18);
 }
 
+/* --- MODIFICA CHIAVE: STILE UNICO PER TUTTE LE IMMAGINI DELLE SCHEDE --- */
 .card-image {
   width: 45px; 
   height: 45px; 
-  border-radius: 8px; 
+  border-radius: 8px; /* Angoli smussati per tutte */
   object-fit: cover;
   flex-shrink: 0;
-}
-
-.card-icon-image {
-  /* --- MODIFICA CHIAVE: STILE PER LOGO-ICONA CIRCOLARE --- */
-  width: 45px;
-  height: 45px;
-  border-radius: 50%;
-  object-fit: cover;
-  flex-shrink: 0;
-  border: 1px solid rgba(255,255,255,0.3);
 }
 
 .card-content {
@@ -184,8 +175,8 @@ h1 {
 
 .social-icons a {
   color: var(--primary-color);
-  /* --- MODIFICA CHIAVE: ICONE SOCIAL PIÙ GRANDI --- */
-  font-size: 2.2rem; 
+  /* --- MODIFICA CHIAVE: ICONE SOCIAL ANCORA PIÙ GRANDI --- */
+  font-size: 2.4rem; 
   transition: all 0.3s ease;
   opacity: 0.8;
 }
@@ -202,5 +193,5 @@ h1 {
   .logo { width: 110px; height: 110px; }
   h1 { font-size: 2.2rem; }
   .subtitle { font-size: 1rem; }
-  .links-container { width: 100%; } /* Le schede occupano tutta la larghezza su mobile */
+  .links-container { width: 100%; }
 }
