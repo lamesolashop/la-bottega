@@ -1,8 +1,7 @@
 :root {
   --primary-color: #f5f5f5; 
   --accent-color: #BDB76B;  
-  /* --- MODIFICA CHIAVE: VIDEO ESTREMAMENTE SCURO --- */
-  --bg-overlay: rgba(0, 0, 0, 0.95); 
+  --bg-overlay: rgba(5, 5, 5, 0.9); /* Overlay scuro, per sicurezza */
   --card-bg: rgba(255, 255, 255, 0.08); 
   --card-border: rgba(255, 255, 255, 0.2);
 }
@@ -18,7 +17,7 @@ body {
   color: var(--primary-color);
   display: flex;
   justify-content: center;
-  align-items: flex-start;
+  align-items: flex-start; /* Permette lo scroll se il contenuto è lungo */
   min-height: 100vh;
   padding: 40px 20px;
 }
@@ -32,12 +31,15 @@ body {
   height: 100vh;
   overflow: hidden;
   z-index: -2;
+  background-color: #000; /* Colore di fallback se il video non carica */
 }
 
 video {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  /* --- MODIFICA CHIAVE: VIDEO ESTREMAMENTE SCURO CON FILTRO --- */
+  filter: brightness(25%); 
 }
 
 .video-background::after {
@@ -92,15 +94,14 @@ h1 {
   margin-right: auto;
 }
 
-/* --- Schede Link con Immagini --- */
+/* --- Schede Link --- */
 .links-container {
   display: flex;
   flex-direction: column;
   gap: 15px; 
   /* --- MODIFICA CHIAVE: CONTENITORE SCHEDE PIÙ CORTO E CENTRATO --- */
-  max-width: 85%;
-  margin-left: auto;
-  margin-right: auto;
+  width: 75%; /* Imposta la larghezza a 3/4 del contenitore */
+  margin: 0 auto; /* Centra il contenitore delle schede */
 }
 
 .link-card {
@@ -125,7 +126,6 @@ h1 {
   background: rgba(255, 255, 255, 0.18);
 }
 
-/* --- MODIFICA CHIAVE: STILE PER IMMAGINI PICCOLE --- */
 .card-image {
   width: 45px; 
   height: 45px; 
@@ -134,25 +134,14 @@ h1 {
   flex-shrink: 0;
 }
 
-/* --- MODIFICA CHIAVE: STILE PER LOGO-ICONA CIRCOLARE --- */
 .card-icon-image {
+  /* --- MODIFICA CHIAVE: STILE PER LOGO-ICONA CIRCOLARE --- */
   width: 45px;
   height: 45px;
-  border-radius: 50%; /* Lo rende circolare */
+  border-radius: 50%;
   object-fit: cover;
   flex-shrink: 0;
   border: 1px solid rgba(255,255,255,0.3);
-}
-
-.card-icon { /* Per altre icone future */
-  font-size: 1.5rem;
-  color: var(--accent-color);
-  width: 45px;
-  height: 45px;
-  flex-shrink: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .card-content {
@@ -213,5 +202,5 @@ h1 {
   .logo { width: 110px; height: 110px; }
   h1 { font-size: 2.2rem; }
   .subtitle { font-size: 1rem; }
-  .links-container { max-width: 100%; }
+  .links-container { width: 100%; } /* Le schede occupano tutta la larghezza su mobile */
 }
